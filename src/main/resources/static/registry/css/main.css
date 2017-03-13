@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+.wrapper{
+	
+	margin-top: 70px;
+	margin: auto;
+	width: 1170px;
+}
+
+header{
+	height: 70px;	
+}
+
+.leftSideBar{
+		float: left;	
+	}
+	
+h1{
+	text-align: center;
+}
