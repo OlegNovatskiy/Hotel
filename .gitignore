@@ -7,7 +7,7 @@
 *.jpg
 *.png
 *.bmp
-!empty_foto.jpg
+!empty_photo.jpg
 ### STS ###
 .apt_generated
 .classpath
