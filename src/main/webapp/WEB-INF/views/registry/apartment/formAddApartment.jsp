@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <h2>Добавлення кімнати</h2>
-<form name="addApartments" action="/registry/apartment/add" method="POST" o>
+<form name="addApartments" action="/registry/apartment/add" method="POST" enctype="multipart/form-data">
 	<table class="table table-bordered">
 		<tr>
 			<th>Назва атрибутів</th>
@@ -29,6 +29,10 @@
 				<td>Ціна</td>
 				<td><input type="text" maxlength=5 value ="${apartment.price}" name="price"required="required">
 			</tr>
+			<tr>
+				<td>Зображення</td>
+				<td><input type="file" name="imageApartment" required="required">
+			</tr>			
 			<tr>
 				<td>Опис</td>
 				<td><textarea name="description">${apartment.description}</textarea>

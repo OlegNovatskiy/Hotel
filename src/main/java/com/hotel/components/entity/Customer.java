@@ -11,66 +11,27 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-@Entity
-@Table(name = "customers")
 public class Customer implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	@Column(name = "first_name")
 	private String firstName;
-
-	@Column(name = "last_name")
 	private String lastName;
-
-	@Column(name = "middle_name")
 	private String middleName;
-
-	@Column(name = "birth_date")
 	private Date birthDate;
-
-	@Column(name = "phone_number")
 	private String phoneNumber;
-
-	@Column(name = "pasport_number")
 	private String pasportNumber;
-
-	@Column(name = "country")
 	private String country;
-
-	@Column(name = "region")
 	private String region;
-
-	@Column(name = "city")
 	private String city;
-
-	@Column(name = "district")
 	private String district;
-
-	@Column(name = "street")
 	private String street;
-
-	@Column(name = "build_number")
 	private String buildNumber;
-
-	@Column(name = "flat_number")
 	private Integer flatNumber;
-
-	@Column(name = "email")
 	private String email;
-
-	@Column(name = "login")
 	private String login;
-
-	@Column(name = "password")
 	private String password;
-
-	@Transient
 	private String confirmPassword;
 
 	public Long getId() {

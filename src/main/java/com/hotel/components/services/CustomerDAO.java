@@ -19,11 +19,11 @@ import com.hotel.components.entity.Attribute;
 import com.hotel.components.entity.Booking;
 import com.hotel.components.entity.CustomerApartment;
 import com.hotel.components.entity.CustomerFilterApartments;
-import com.hotel.components.interfaces.ICustomer;
+import com.hotel.components.interfaces.ICustomerCu;
 import com.mysql.jdbc.Statement;
 
 @Repository
-public class CustomerDAO implements ICustomer{
+public class CustomerDAO implements ICustomerCu{
 
 	private static final String SELECTED_FIELDS_APARTMENTS = " SELECT DISTINCT apa.id, apa.number, apa.price, apa.description, apa.image, fig.tit FROM apartments AS apa ";
 	private static final String INNER_JOIN_USE_APARTMENTS = " INNER JOIN use_apartments AS ua on ua.apartment_id = apa.id ";

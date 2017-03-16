@@ -1,9 +1,20 @@
 package com.hotel.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.UUID;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +34,7 @@ import com.hotel.services.ApartmentService;
 public class ApartmentController {
 
 	private static final String ATTRIBUTES = "attributes";
-	
+
 	@Autowired
 	private ApartmentService apartmentService;
 
@@ -74,9 +85,19 @@ public class ApartmentController {
 	}
 
 	@RequestMapping(value = { "/apartment/add" }, method = RequestMethod.POST)
-	public ModelAndView addApartments(@ModelAttribute Apartment apartment,
+	public ModelAndView addApartments(@ModelAttribute("apartment") Apartment apartment,
 			@ModelAttribute(value = ATTRIBUTES) ArrayList<Attribute> attributes, Model model,
-			HttpServletRequest request) {
+			HttpServletRequest request, HttpServletResponse response) {
+
+		String nameImage = null;
+		try {
+			nameImage = uploadPhoto(request);
+			apartment.setImage(nameImage);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		Integer idApartment = apartmentService.addApartment(apartment, request.getParameterValues("attrs"));
 
@@ -93,6 +114,33 @@ public class ApartmentController {
 			return mymodel;
 		}
 
+	}
+
+	private String uploadPhoto(HttpServletRequest request) throws ServletException, IOException {
+
+		final Part filePart = request.getPart("imageApartment");
+		final String fileExtension = FilenameUtils
+				.getExtension(Paths.get(filePart.getSubmittedFileName()).getFileName().toString());
+		String source = "src/main/webapp/Images/";
+		String fileName = String.format("%s.%s", UUID.randomUUID().toString(), fileExtension);
+
+		OutputStream out = null;
+		InputStream filecontent = null;
+
+		out = new FileOutputStream(new File(String.format("%s%s", source, fileName)));
+		filecontent = filePart.getInputStream();
+
+		int read = 0;
+		final byte[] bytes = new byte[1024];
+
+		while ((read = filecontent.read(bytes)) != -1) {
+			out.write(bytes, 0, read);
+		}
+
+		out.close();
+		filecontent.close();
+
+		return fileName;
 	}
 
 	@RequestMapping(value = { "/apartment/edit/{id}" }, method = RequestMethod.GET)

@@ -2,7 +2,7 @@ package com.hotel.components.entity;
 
 import java.util.List;
 
-public class Apartment{
+public class Apartment {
 
 	private Integer id;
 	private String number;
@@ -11,8 +11,17 @@ public class Apartment{
 	private Integer roomCount;
 	private Integer price;
 	private Boolean booking;
+	private String image;
 	private String description;
 	private List<Attribute> attributes;
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 	public Integer getId() {
 		return id;

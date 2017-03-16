@@ -25,7 +25,8 @@
 						<div class="thumbnail">
 						<div class="cf galery">
 						<div class="col-xs-4 col-lg-4">
-							<img class="" src="${apartment.image}" alt="${apartment.number}">
+							<img class="group list-group-image" src="../../../Images/${apartment.image}"
+								alt="${apartment.number}" style="width: 216px; height: 162px;">
 						</div>
 						<div class="col-xs-8 col-lg-8">
 							<div class="caption">
@@ -47,16 +48,20 @@
 						<div class="cf galery">
 							<h2 align="center">Галерея</h2>
 							<div class="col-xs-3 col-lg-3">
-								<img class="galery-img" src="${apartment.image}" alt="${apartment.number}">
+								<img class="galery-img" src="../../../Images/${apartment.image}"
+								alt="${apartment.number}">
 							</div>
 							<div class="col-xs-3 col-lg-3">
-								<img class="galery-img" src="${apartment.image}" alt="${apartment.number}">
+								<img class="galery-img" src="../../../Images/${apartment.image}"
+								alt="${apartment.number}">
 							</div>
 							<div class="col-xs-3 col-lg-3">
-								<img class="galery-img" src="${apartment.image}" alt="${apartment.number}">
+								<img class="galery-img" src="../../../Images/${apartment.image}"
+								alt="${apartment.number}">
 							</div>
 							<div class="col-xs-3 col-lg-3">
-								<img class="galery-img" src="${apartment.image}" alt="${apartment.number}">
+								<img class="galery-img" src="../../../Images/${apartment.image}"
+								alt="${apartment.number}">
 							</div>
 						</div>
 						<div class="cf message">
