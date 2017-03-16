@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import com.hotel.components.entity.Booking;
 import com.hotel.components.entity.CustomerApartment;
 import com.hotel.components.entity.CustomerFilterApartments;
-import com.hotel.components.interfaces.ICustomer;
+import com.hotel.components.interfaces.ICustomerCu;
 
 @Service
 public class CustomerApartmentService {
 
 	@Autowired
-	private ICustomer iCustomer;
+	private ICustomerCu iCustomer;
 
 	public List<CustomerApartment> getApartmens(CustomerFilterApartments filterApartment) {
 		return iCustomer.getApartmens(filterApartment);

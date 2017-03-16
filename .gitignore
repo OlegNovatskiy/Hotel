@@ -3,7 +3,11 @@
 /bin/
 /gradle/
 !gradle/wrapper/gradle-wrapper.jar
-
+*.jpeg
+*.jpg
+*.png
+*.bmp
+!empty_foto.jpg
 ### STS ###
 .apt_generated
 .classpath

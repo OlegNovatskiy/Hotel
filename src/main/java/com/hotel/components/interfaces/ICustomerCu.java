@@ -6,7 +6,7 @@ import com.hotel.components.entity.Booking;
 import com.hotel.components.entity.CustomerApartment;
 import com.hotel.components.entity.CustomerFilterApartments;
 
-public interface ICustomer {
+public interface ICustomerCu {
 
 	public List<CustomerApartment> getApartmens(CustomerFilterApartments filterApartment);
 	

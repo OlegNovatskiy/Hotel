@@ -35,9 +35,10 @@
 						<input type="hidden" name="idApartment" value="${apartment.id}" >
 						<input type="hidden" name="numberApartment" value="${apartment.number}">
 						<div class="thumbnail">
-							<a href="/customer/apartment/${apartment.number}"> <img
-								class="group list-group-image" src="${apartment.image}"
-								alt="${apartment.number}">
+							<a href="/customer/apartment/${apartment.number}">
+							 
+							 <img class="group list-group-image" src="../../../Images/${apartment.image}"
+								alt="${apartment.number}" style="width: 216px; height: 162px;">
 							</a>
 
 							<div class="caption">

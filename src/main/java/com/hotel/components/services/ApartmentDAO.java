@@ -24,7 +24,7 @@ import com.mysql.jdbc.Statement;
 @Repository
 public class ApartmentDAO implements IApartment {
 
-	private static final String QUERY_ADD_APARTMENT = "INSERT INTO kerpach_hotel.apartments (number, people_count, bed_count, rooms_count, price, description) VALUES ('%s',%d,%d,%d, %d, '%s')";
+	private static final String QUERY_ADD_APARTMENT = "INSERT INTO kerpach_hotel.apartments (number, people_count, bed_count, rooms_count, price, image, description) VALUES ('%s',%d,%d,%d, %d,'%s', '%s')";
 	private static final String QUERY_SAVE_ATTRIBUTES_OF_APARTMENT = "INSERT INTO kerpach_hotel.attributes (apartments_id ,attribute_id) VALUES (%d, %s)";
 	private static final String QUERY_SELECT_APARTMENT = "SELECT * FROM kerpach_hotel.apartments WHERE id = %d";
 	private static final String QUERY_SELECT_APARTMENTS = "SELECT apa.id, apa.number, apa.people_count, apa.bed_count, apa.rooms_count, apa.price, apa.occupied FROM kerpach_hotel.apartments AS apa";
@@ -96,7 +96,7 @@ public class ApartmentDAO implements IApartment {
 	public Integer addApartment(Apartment apartment, String[] attributes) {
 
 		String sqlApartment = String.format(QUERY_ADD_APARTMENT, apartment.getNumber(), apartment.getPeopleCount(),
-				apartment.getBedCount(), apartment.getRoomCount(), apartment.getPrice(), apartment.getDescription());
+				apartment.getBedCount(), apartment.getRoomCount(), apartment.getPrice(), apartment.getImage(), apartment.getDescription());
 
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		PreparedStatementCreator preStatement = new PreparedStatementCreator() {
