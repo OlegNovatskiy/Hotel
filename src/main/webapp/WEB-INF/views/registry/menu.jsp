@@ -8,7 +8,7 @@
 		<div class="collapse navbar-collapse" id="navbar-collapse-4">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/registry/home">Головна</a></li>
-				<li><a href="/registry/registration">Реєстрація</a></li>
+				<!-- <li><a href="/registry/registration">Реєстрація</a></li> -->
 				<li><a href="/registry/booking">Бронювання</a></li>
 				<li><a href="/registry/apartments">Номери готелю</a></li>
 				<li><a href="/registry/customers">Клієнти</a></li>
